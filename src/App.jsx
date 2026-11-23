@@ -836,7 +836,7 @@ export default function App() {
         <div className="msheet" onClick={() => setMore(false)}>
           <div className="mpanel" onClick={e => e.stopPropagation()}>
             <div className="mgrid">
-              {[...NAV.filter(n => MORE.includes(n[0])), ['profile', 'Meu perfil', USER], ['cfg', 'Configurações', GEAR]].map(([k, l, d]) => (
+              {NAV.filter(n => MORE.includes(n[0])).map(([k, l, d]) => (
                 <button key={k} className={'mi' + (tab === k ? ' on' : '')} onClick={() => { setTab(k); setMore(false) }}>
                   <span className="mic"><Ic d={d} />{k === 'alerts' && <b className="nb">{nAl}</b>}</span>{l === 'IA' ? 'Assistente IA' : l}
                 </button>
